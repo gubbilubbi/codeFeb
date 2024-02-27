@@ -18,11 +18,11 @@ CodeBook=CodeBook.myCodeBook;
 meanU=zeros(nROI,nGroups,nFreqGroups);
 stdU=zeros(nROI,nGroups,nFreqGroups);
 
-% Split eigenvectors into low, medium and high frequencies 
+% Split eigenvectors into mean absolute low, medium and high frequencies 
 for i=1:nFreqGroups
     for g=1:nGroups
-        meanU(:,g,i)=mean(abs(Ufreqs(:,fgNN{i,g},indsPDHC{g},i)),[2,3]);
-        stdU(:,g,i)=std(abs(Ufreqs(:,fgNN{i,g},indsPDHC{g},i)),0,[2,3]);
+        meanU(:,g,i)=mean(abs(Ufreqs(:,fgK{i,g},indsPDHC{g},i)),[2,3]);
+        stdU(:,g,i)=std(abs(Ufreqs(:,fgK{i,g},indsPDHC{g},i)),0,[2,3]);
     end
 end
 
